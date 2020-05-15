@@ -1,0 +1,117 @@
+:root{
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.web-container{
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+    grid-template-rows: 100vh;
+    position: relative;
+}
+.left-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 110px calc(100vh - 110px);
+}
+.right-container{
+    background-color: #f8f9fa;
+    border-left: 0.02px solid #e5ddd5;
+}
+/*left container styles*/
+.menu-search-container{
+}
+.menu-bar{
+    background-color: #ededed;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image-profile{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 16px;
+    cursor: pointer;
+}
+.menu-options>div{
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.menu-options>div i{
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    padding: 8px;
+    color: #919191;
+}
+.search-bar{
+    background-color: #f7f7f7;
+    height: 50px;
+    border-bottom: 0.02px solid #e5ddd5;
+}
+/*profile container*/
+.profile-container{
+    position: absolute;
+    left: -30vw;
+    top: 0;
+    height: 100vh;
+    width: 30vw;
+    background-color: #ededed;
+}
+.banner-profile{
+    width: 100%;
+    height: 110px;
+    background-color: #00bfa5;
+    position: relative;
+}
+.option-banner-profile{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.option-banner-profile>div{
+    cursor: pointer;
+}
+.back-button-profile{
+    font-size: 24px !important;
+    width: 24px;    
+    height: 24px;
+}
+.text-banner-profile{
+    margin-left: 30px;
+    font-size: 19px;
+}
+/**/
+/*animations*/
+.profile-slide{
+    animation: slide 0.4s cubic-bezier(.15,1.15,.64,.94) forwards;
+}
+.profile-slide-reverse{
+    animation: slide-reverse 0.4s cubic-bezier(.15,1.15,.64,.94) both;
+}
+@keyframes slide{
+    0%{
+        left: -30vw;
+    }
+    100%{
+        left: 0;
+    }
+}
+@keyframes slide-reverse{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -30vw;
+    }
+}
