@@ -1,5 +1,5 @@
-:root{
-    
+*{
+ box-sizing: border-box;   
 }
 body{
     margin: 0;
@@ -7,7 +7,7 @@ body{
 }
 .web-container{
     display: grid;
-    grid-template-columns: 30vw 70vw;
+    grid-template-columns: 30% 70%;
     grid-template-rows: 100vh;
     position: relative;
 }
@@ -91,6 +91,58 @@ body{
     margin-left: 30px;
     font-size: 19px;
 }
+.profile-info{
+    height: calc(100vh - 110px);
+    overflow-y: scroll;
+}
+.profile-photo-container{
+    padding: 28px 0;
+    height: 256px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-photo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+.profile-photo > * {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.option-profile-photo{
+    background-color: rgba(117, 117, 117, 0.67);
+    display: flex;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+    color: white;
+}
+.option-profile-photo:hover{
+    opacity: 1;
+}
+.option-profile-photo span{
+    margin: auto;
+    text-align: center;
+}
+.edit-profile{
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 14px 30px 10px;
+}
+.edit-profile .title{
+    color: #009688;
+}
+.extra-info-profile{
+    margin: 30px 10px 20px 28px;
+}
 /**/
 /*animations*/
 .profile-slide{
@@ -98,6 +150,12 @@ body{
 }
 .profile-slide-reverse{
     animation: slide-reverse 0.4s cubic-bezier(.15,1.15,.64,.94) both;
+}
+.photo-efect{
+    animation: photoInsideOut 0.3s cubic-bezier(.36,1.11,.65,.97) 0.2s both;
+}
+.info-profile-container{
+    animation: containerUpDown 0.2s cubic-bezier(.36,1.11,.65,.97) 0.3s both;    
 }
 @keyframes slide{
     0%{
@@ -113,5 +171,31 @@ body{
     }
     100%{
         left: -30vw;
+    }
+}
+@keyframes photoInsideOut{
+    0%{
+        width: 2px;
+        height: 2px;
+    }
+    100%{
+        width: 200px;
+        height: 200px;
+    }
+}
+@keyframes containerUpDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    30%{
+        opacity: 0.2;
+    }
+    95%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
